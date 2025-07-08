@@ -1,0 +1,34 @@
+# Source files (users don't need these)
+src/
+target/
+Cargo.toml
+Cargo.lock
+*.rs
+
+# Build scripts (not needed for prebuilt package)
+scripts/
+wasm-pack.log
+
+# Development files
+.github/
+.gitignore
+tsconfig.json
+example.js
+
+# Tests
+tests/
+benches/
+examples/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Only include the prebuilt pkg/, README.md, and LICENSE

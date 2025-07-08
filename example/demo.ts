@@ -8,7 +8,7 @@ import init, {
   get_encoding_efficiency,
   ConversionOptions,
   DataType
-} from '../pkg/z85_wasm';
+} from '../node';
 
 async function main() {
   // Initialize the WASM module
@@ -86,11 +86,13 @@ async function main() {
   
   for (const size of dataSizes) {
     const stats = get_encoding_efficiency(size);
+    // The result is a Map in Node.js
+    const statsMap = stats as Map<string, number>;
     console.log(`Data size: ${size.toLocaleString()} bytes`);
-    console.log(`  Base64 size: ${stats.base64_size.toLocaleString()} bytes`);
-    console.log(`  Z85 size: ${stats.z85_size.toLocaleString()} bytes`);
-    console.log(`  Efficiency ratio: ${stats.efficiency_ratio.toFixed(4)}`);
-    console.log(`  Bandwidth saving: ${stats.bandwidth_saving.toFixed(2)}%`);
+    console.log(`  Base64 size: ${statsMap.get('base64_size')?.toLocaleString()} bytes`);
+    console.log(`  Z85 size: ${statsMap.get('z85_size')?.toLocaleString()} bytes`);
+    console.log(`  Efficiency ratio: ${statsMap.get('efficiency_ratio')?.toFixed(4)}`);
+    console.log(`  Bandwidth saving: ${statsMap.get('bandwidth_saving')?.toFixed(2)}%`);
   }
   console.log('\n');
 
