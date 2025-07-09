@@ -1,6 +1,6 @@
 {
   "name": "@common-creation/z85-wasm",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Z85 encoder/decoder WASM library",
   "author": "Common Creation, Co., Ltd.",
   "license": "MIT",
@@ -25,8 +25,14 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "pkg/",
-    "pkg-node/",
+    "pkg/z85_wasm_bg.wasm",
+    "pkg/z85_wasm.js",
+    "pkg/z85_wasm.d.ts",
+    "pkg/z85_wasm_bg.wasm.d.ts",
+    "pkg-node/z85_wasm_bg.wasm",
+    "pkg-node/z85_wasm.js",
+    "pkg-node/z85_wasm.d.ts",
+    "pkg-node/z85_wasm_bg.wasm.d.ts",
     "node.js",
     "node.d.ts",
     "README.md",

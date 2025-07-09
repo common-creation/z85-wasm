@@ -1,6 +1,6 @@
 [package]
 name = "z85-wasm"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Common Creation, Co., Ltd."]
 edition = "2021"
 description = "Z85 encoder/decoder WASM library"
